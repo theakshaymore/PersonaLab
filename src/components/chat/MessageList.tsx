@@ -1,7 +1,4 @@
-interface Message {
-  role: "user" | "assistant";
-  content: string;
-}
+import type { Message } from "@/types/chats";
 
 interface MessageListProps {
   messages: Message[];

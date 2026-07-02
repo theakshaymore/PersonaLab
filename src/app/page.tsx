@@ -4,11 +4,9 @@ import { useState, type FormEvent } from "react";
 import { ChatHeader } from "@/components/chat/ChatHeader";
 import { ChatInput } from "@/components/chat/ChatInput";
 import { MessageList } from "@/components/chat/MessageList";
-
-interface Message {
-  role: "user" | "assistant";
-  content: string;
-}
+import { Sidebar } from "@/components/chat/Sidebar";
+import { personas } from "@/data/personas";
+import type { Message } from "@/types/chats";
 
 const defaultAssistantMessage = "Default response";
 
@@ -23,7 +21,6 @@ const initialMessages: Message[] = [
   },
 ];
 
-const personas = ["Hitesh Choudhary", "Piyush Garg"];
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -52,9 +49,12 @@ export default function Home() {
       data-theme={theme}
       className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors"
     >
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen">
+        <Sidebar />
+
+        <div className="flex min-h-screen flex-1 flex-col">
         <ChatHeader
-          personas={personas}
+          personas={personas.map((persona) => persona.name)}
           theme={theme}
           onToggleTheme={() =>
             setTheme((current) => (current === "light" ? "dark" : "light"))
@@ -69,6 +69,7 @@ export default function Home() {
             onSubmit={handleSubmit}
           />
         </section>
+        </div>
       </div>
     </main>
   );

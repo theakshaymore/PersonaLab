@@ -1,16 +1,17 @@
-interface ChatHeaderProps {
-  personas: string[];
-  theme: "light" | "dark";
-  onToggleTheme: () => void;
-}
+import type { ChatHeaderProps } from "@/types/chats";
 
-export function ChatHeader({ personas, theme, onToggleTheme }: ChatHeaderProps) {
+export function ChatHeader({
+  personas,
+  theme,
+  onToggleTheme,
+}: ChatHeaderProps) {
   return (
     <header className="border-b border-[var(--border)] bg-[var(--header)] px-5 py-3 backdrop-blur">
       <div className="mx-auto flex max-w-4xl items-center justify-between gap-3">
         <div>
-          <h1 className="text-base font-semibold">PersonaLab</h1>
-          <p className="text-xs text-[var(--muted)]">Minimal persona chat</p>
+          {/* <h1 className="text-base font-semibold">PersonaLab</h1>
+          <p className="text-xs text-[var(--muted)]">Minimal persona chat</p> */}
+          <p className="text-xs text-[var(--muted)]"></p>
         </div>
 
         <div className="flex items-center gap-2">
