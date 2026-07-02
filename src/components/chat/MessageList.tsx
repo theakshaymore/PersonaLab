@@ -12,8 +12,8 @@ export function MessageList({ messages }: MessageListProps) {
           key={message.role + message.content + index}
           className={
             message.role === "user"
-              ? "ml-auto max-w-[78%] rounded-2xl bg-[var(--accent)] px-4 py-3 text-sm leading-6 text-white"
-              : "mr-auto max-w-[78%] rounded-2xl bg-[var(--assistant)] px-4 py-3 text-sm leading-6 text-[var(--foreground)]"
+              ? "ml-auto max-w-[78%] rounded-2xl bg-(--accent) px-4 py-3 text-sm leading-6 text-white"
+              : "mr-auto max-w-[78%] rounded-2xl bg-(--assistant) px-4 py-3 text-sm leading-6 text-(--foreground)"
           }
         >
           {message.content}

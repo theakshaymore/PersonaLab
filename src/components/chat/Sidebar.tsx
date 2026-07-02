@@ -9,13 +9,13 @@ const historyItems = [
 
 export function Sidebar() {
   return (
-    <aside className="hidden min-h-screen w-72 shrink-0 border-r border-[var(--border)] bg-[var(--surface)] px-3 py-4 md:flex md:flex-col">
+    <aside className="hidden min-h-screen w-72 shrink-0 border-r border-(--border) bg-(--surface) px-3 py-4 md:flex md:flex-col">
       <div className="mb-4 px-2">
         <h2 className="text-sm font-semibold">PersonaLab</h2>
-        <p className="mt-1 text-xs text-[var(--muted)]">Recent chats</p>
+        <p className="mt-1 text-xs text-(--muted)">Recent chats</p>
       </div>
 
-      <button className="mb-4 rounded-xl border border-[var(--border)] px-3 py-2 text-left text-sm transition hover:bg-[var(--hover)]">
+      <button className="mb-4 rounded-xl border border-(--border) px-3 py-2 text-left text-sm transition hover:bg-(--hover)">
         New chat
       </button>
 
@@ -25,8 +25,8 @@ export function Sidebar() {
             key={item}
             className={
               index === 0
-                ? "w-full truncate rounded-lg bg-[var(--hover)] px-3 py-2 text-left text-sm"
-                : "w-full truncate rounded-lg px-3 py-2 text-left text-sm text-[var(--muted)] transition hover:bg-[var(--hover)] hover:text-[var(--foreground)]"
+                ? "w-full truncate rounded-lg bg-(--hover) px-3 py-2 text-left text-sm"
+                : "w-full truncate rounded-lg px-3 py-2 text-left text-sm text-(--muted) transition hover:bg-(--hover)] hover:text-(--foreground)]"
             }
           >
             {item}
@@ -34,7 +34,7 @@ export function Sidebar() {
         ))}
       </nav>
 
-      <div className="mt-auto rounded-xl border border-[var(--border)] p-3 text-xs text-[var(--muted)]">
+      <div className="mt-auto rounded-xl border border-(--border) p-3 text-xs text-(--muted)">
         Dummy history for now. Later this comes from saved conversations.
       </div>
     </aside>
